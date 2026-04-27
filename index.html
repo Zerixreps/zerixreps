@@ -9,80 +9,126 @@
 body{
 margin:0;
 font-family:Arial,sans-serif;
-background:#000;
 color:#fff;
 text-align:center;
 overflow-x:hidden;
+background:linear-gradient(120deg,#000,#0a0a0a,#111,#000);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
 }
 
-/* TŁO – dużo napisów, cała wysokość */
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* TŁO – ruchome napisy */
 body::before{
-content:"ZERIX REPS • STREET CULTURE • LUXURY REPS • COMMUNITY • ZERIX REPS • STREET CULTURE • LUXURY REPS • COMMUNITY • ZERIX REPS • STREET CULTURE • LUXURY REPS • COMMUNITY •";
+content:"ZERIX • REPS • STREET • CULTURE • LUXURY • COMMUNITY • ZERIX • REPS • STREET • CULTURE • LUXURY • COMMUNITY •";
 position:fixed;
 top:0;
 left:0;
-width:100%;
+width:200%;
 height:200%;
-font-size:70px;
+font-size:80px;
 font-weight:900;
 letter-spacing:6px;
-color:rgba(255,255,255,0.04);
-line-height:120px;
-white-space:normal;
+color:rgba(255,255,255,0.05);
+line-height:130px;
+animation:scrollBg 25s linear infinite;
 z-index:-1;
+white-space:normal;
+}
+
+@keyframes scrollBg{
+from{transform:translateY(0);}
+to{transform:translateY(-50%);}
 }
 
 /* kontener */
 .container{
 max-width:850px;
 margin:auto;
-padding:40px;
+padding:50px 30px;
 }
 
-/* LOGO – większe i kolorowe */
+/* LOGO – bardziej „design” */
+.logo-wrap{
+display:flex;
+justify-content:center;
+margin-bottom:10px;
+}
+
 .logo-img{
-width:220px;
-height:220px;
+width:240px;
+height:240px;
 object-fit:cover;
-border-radius:25px;
-margin-top:20px;
-box-shadow:0 0 30px rgba(255,255,255,0.15);
+border-radius:30px;
+filter:contrast(1.05);
+box-shadow:
+0 0 25px rgba(255,255,255,0.08),
+0 0 60px rgba(255,255,255,0.03);
+transition:0.4s;
 }
 
-/* tytuł */
+.logo-img:hover{
+transform:scale(1.04) rotate(1deg);
+}
+
+/* TYTUŁ */
 .title{
 font-size:52px;
 font-weight:900;
-letter-spacing:5px;
+letter-spacing:6px;
 margin-top:15px;
 }
 
-/* opis */
 .subtitle{
-font-size:16px;
 opacity:0.6;
-margin-bottom:30px;
+margin-bottom:35px;
+letter-spacing:2px;
 }
 
-/* przyciski */
+/* PRZYCISKI – rounded + hover lift */
 .btn{
 display:block;
 margin:14px auto;
-padding:15px;
+padding:16px;
 width:85%;
 max-width:420px;
+border-radius:999px;
 border:1px solid rgba(255,255,255,0.25);
-background:transparent;
+background:rgba(255,255,255,0.04);
 color:#fff;
 text-decoration:none;
 font-size:15px;
 letter-spacing:2px;
 transition:0.25s;
+position:relative;
+overflow:hidden;
+}
+
+/* lekki „shine” efekt */
+.btn::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.15),transparent);
+transition:0.5s;
+}
+
+.btn:hover::before{
+left:100%;
 }
 
 .btn:hover{
-background:#fff;
-color:#000;
+transform:translateY(-5px);
+background:rgba(255,255,255,0.1);
+box-shadow:0 10px 25px rgba(255,255,255,0.08);
 }
 
 /* karty */
@@ -97,11 +143,18 @@ margin-top:35px;
 .card{
 background:rgba(255,255,255,0.05);
 padding:20px;
-border-radius:15px;
+border-radius:18px;
 width:220px;
 border:1px solid rgba(255,255,255,0.1);
+transition:0.3s;
 }
 
+.card:hover{
+transform:translateY(-6px);
+background:rgba(255,255,255,0.1);
+}
+
+/* footer */
 .footer{
 margin-top:50px;
 font-size:12px;
@@ -114,19 +167,22 @@ opacity:0.5;
 
 <div class="container">
 
-<!-- KOLOROWE LOGO -->
+<!-- LOGO W RAMCE (bardziej premium look) -->
+<div class="logo-wrap">
 <img src="foto.jpg" class="logo-img">
+</div>
 
 <div class="title">ZERIX REPS</div>
 <div class="subtitle">Sneakers • Reps • Community</div>
 
-<a class="btn" href="https://www.usfans.com/register?ref=BS2QSG" target="_blank">🔥 Rejestracja USFANS</a>
-<a class="btn" href="https://discord.gg/c5z9m9VKxP" target="_blank">💬 Discord</a>
-<a class="btn" href="https://docs.google.com/spreadsheets/d/1GSb10WPdCQU6u1VtgPHUqVWWBPHa3yGqODf9SpNO9XI/edit" target="_blank">📦 Spreadsheet</a>
+<a class="btn" href="https://www.usfans.com/register?ref=BS2QSG" target="_blank">🔥 USFANS</a>
+<a class="btn" href="https://discord.gg/c5z9m9VKxP" target="_blank">💬 DISCORD</a>
+<a class="btn" href="https://docs.google.com/spreadsheets/d/1GSb10WPdCQU6u1VtgPHUqVWWBPHa3yGqODf9SpNO9XI/edit" target="_blank">📦 SPREADSHEET</a>
 
 <div class="cards">
 <div class="card">🔥 Premium jakość</div>
 <div class="card">💬 Społeczność</div>
+<div class="card">📈 Stałe aktualizacje</div>
 </div>
 
 <div class="footer">
