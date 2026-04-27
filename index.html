@@ -8,139 +8,76 @@
 <style>
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:#0a0a0a;
+font-family:Arial,sans-serif;
+background:#000;
 color:#fff;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-overflow:hidden;
-
-/* APPLE STYLE FADE-IN */
-opacity:0;
-animation:fadeIn 1.2s ease forwards;
+text-align:center;
+overflow-x:hidden;
 }
 
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
-
-/* tło subtelne */
+/* TŁO – dużo napisów, cała wysokość */
 body::before{
-content:"";
+content:"ZERIX REPS • STREET CULTURE • LUXURY REPS • COMMUNITY • ZERIX REPS • STREET CULTURE • LUXURY REPS • COMMUNITY • ZERIX REPS • STREET CULTURE • LUXURY REPS • COMMUNITY •";
 position:fixed;
-inset:0;
-background:radial-gradient(circle at 50% 30%, rgba(255,255,255,0.06), transparent 60%);
+top:0;
+left:0;
+width:100%;
+height:200%;
+font-size:70px;
+font-weight:900;
+letter-spacing:6px;
+color:rgba(255,255,255,0.04);
+line-height:120px;
+white-space:normal;
 z-index:-1;
 }
 
-/* MARQUEE */
-.marquee{
-position:absolute;
-top:20px;
-width:100%;
-white-space:nowrap;
-overflow:hidden;
-opacity:0.08;
-font-size:120px;
-font-weight:900;
-letter-spacing:10px;
-}
-
-.marquee span{
-display:inline-block;
-animation:scroll 18s linear infinite;
-}
-
-@keyframes scroll{
-from{transform:translateX(100%);}
-to{transform:translateX(-100%);}
-}
-
-/* kontener z animacją jak Apple cards */
+/* kontener */
 .container{
-text-align:center;
-max-width:700px;
-padding:30px;
-
-/* slide + fade */
-opacity:0;
-transform:translateY(30px);
-animation:slideUp 1s ease forwards;
-animation-delay:0.3s;
+max-width:850px;
+margin:auto;
+padding:40px;
 }
 
-@keyframes slideUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* logo */
+/* LOGO – większe i kolorowe */
 .logo-img{
-width:140px;
-height:140px;
-border-radius:18px;
+width:220px;
+height:220px;
 object-fit:cover;
-filter:grayscale(100%);
-opacity:0.9;
-margin-bottom:15px;
-transition:0.3s;
+border-radius:25px;
+margin-top:20px;
+box-shadow:0 0 30px rgba(255,255,255,0.15);
 }
 
-.logo-img:hover{
-transform:scale(1.05);
-opacity:1;
-}
-
-/* tekst */
+/* tytuł */
 .title{
-font-size:48px;
+font-size:52px;
 font-weight:900;
-letter-spacing:6px;
-margin-bottom:10px;
+letter-spacing:5px;
+margin-top:15px;
 }
 
+/* opis */
 .subtitle{
-font-size:14px;
-letter-spacing:3px;
+font-size:16px;
 opacity:0.6;
-margin-bottom:40px;
+margin-bottom:30px;
 }
 
 /* przyciski */
 .btn{
 display:block;
-margin:12px auto;
-padding:14px;
-width:80%;
-max-width:380px;
-border:1px solid rgba(255,255,255,0.15);
+margin:14px auto;
+padding:15px;
+width:85%;
+max-width:420px;
+border:1px solid rgba(255,255,255,0.25);
 background:transparent;
 color:#fff;
 text-decoration:none;
-font-size:14px;
+font-size:15px;
 letter-spacing:2px;
-transition:0.3s;
-opacity:0;
-transform:translateY(10px);
-
-/* wejście sekwencyjne */
-animation:btnIn 0.8s ease forwards;
-}
-
-.btn:nth-child(1){animation-delay:0.6s;}
-.btn:nth-child(2){animation-delay:0.75s;}
-.btn:nth-child(3){animation-delay:0.9s;}
-
-@keyframes btnIn{
-to{
-opacity:1;
-transform:translateY(0);
-}
+transition:0.25s;
 }
 
 .btn:hover{
@@ -148,38 +85,54 @@ background:#fff;
 color:#000;
 }
 
-/* footer */
+/* karty */
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+margin-top:35px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:15px;
+width:220px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
 .footer{
-position:absolute;
-bottom:20px;
-font-size:11px;
-opacity:0.4;
-letter-spacing:2px;
+margin-top:50px;
+font-size:12px;
+opacity:0.5;
 }
 </style>
 </head>
 
 <body>
 
-<div class="marquee">
-<span>ZERIX REPS • STREET CULTURE • ZERIX REPS • STREET CULTURE •</span>
-</div>
-
 <div class="container">
 
+<!-- KOLOROWE LOGO -->
 <img src="foto.jpg" class="logo-img">
 
-<div class="title">ZERIX</div>
-<div class="subtitle">REPS • COMMUNITY • CULTURE</div>
+<div class="title">ZERIX REPS</div>
+<div class="subtitle">Sneakers • Reps • Community</div>
 
-<a class="btn" href="https://www.usfans.com/register?ref=BS2QSG" target="_blank">USFANS</a>
-<a class="btn" href="https://discord.gg/c5z9m9VKxP" target="_blank">DISCORD</a>
-<a class="btn" href="https://docs.google.com/spreadsheets/d/1GSb10WPdCQU6u1VtgPHUqVWWBPHa3yGqODf9SpNO9XI/edit" target="_blank">SPREADSHEET</a>
+<a class="btn" href="https://www.usfans.com/register?ref=BS2QSG" target="_blank">🔥 Rejestracja USFANS</a>
+<a class="btn" href="https://discord.gg/c5z9m9VKxP" target="_blank">💬 Discord</a>
+<a class="btn" href="https://docs.google.com/spreadsheets/d/1GSb10WPdCQU6u1VtgPHUqVWWBPHa3yGqODf9SpNO9XI/edit" target="_blank">📦 Spreadsheet</a>
 
+<div class="cards">
+<div class="card">🔥 Premium jakość</div>
+<div class="card">💬 Społeczność</div>
 </div>
 
 <div class="footer">
 ZERIX REPS © 2026
+</div>
+
 </div>
 
 </body>
