@@ -9,78 +9,128 @@
 body{
 margin:0;
 font-family:Arial,sans-serif;
-text-align:center;
-background:linear-gradient(135deg,#0f0f0f,#1f1f4d,#5d00ff);
 color:white;
+text-align:center;
+background:linear-gradient(135deg,#0a0a0a,#1a1a40,#4b00b5);
+overflow-x:hidden;
+}
+
+/* delikatne „życie” w tle */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:radial-gradient(circle at 20% 20%, rgba(140,0,255,0.2), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(0,198,255,0.15), transparent 40%);
+z-index:-1;
+animation:moveBg 8s infinite alternate;
+}
+
+@keyframes moveBg{
+from{transform:scale(1);}
+to{transform:scale(1.1);}
 }
 
 .container{
-max-width:700px;
+max-width:800px;
 margin:auto;
-padding:30px;
+padding:25px;
 }
 
-.profile{
-width:260px;
-height:260px;
+.logo-img{
+width:200px;
+height:200px;
 object-fit:cover;
-border-radius:25px;
-box-shadow:0 0 30px rgba(140,0,255,.5);
+border-radius:30px;
+box-shadow:0 0 35px rgba(140,0,255,.6);
 margin-top:30px;
+transition:0.4s;
 }
 
-.logo{
-font-size:55px;
+.logo-img:hover{
+transform:scale(1.05);
+}
+
+.title{
+font-size:50px;
 font-weight:bold;
-margin-top:25px;
+margin-top:15px;
 text-shadow:0 0 20px #8a2be2;
 }
 
-.desc{
-margin:25px 0;
-font-size:20px;
+.subtitle{
+font-size:18px;
+opacity:0.8;
+margin-bottom:30px;
 }
 
+/* przyciski */
 .btn{
 display:block;
-margin:20px auto;
-padding:18px;
+margin:15px auto;
+padding:16px;
 width:85%;
 max-width:500px;
 background:linear-gradient(90deg,#7b2cff,#00c6ff);
 color:white;
 text-decoration:none;
-font-size:22px;
+font-size:20px;
 font-weight:bold;
-border-radius:18px;
-box-shadow:0 0 18px rgba(0,198,255,.4);
+border-radius:15px;
+box-shadow:0 0 18px rgba(0,198,255,.3);
 transition:0.3s;
 }
 
 .btn:hover{
-transform:scale(1.03);
+transform:scale(1.05);
+}
+
+/* sekcja „karty” */
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:30px;
+gap:15px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:15px;
+width:200px;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:rgba(255,255,255,0.1);
 }
 
 .footer{
 margin-top:50px;
-opacity:0.7;
+opacity:0.6;
+font-size:14px;
 }
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<!-- TWOJE ZDJĘCIE Z REPO -->
-<img src="foto.jpg" class="profile">
+<!-- TWOJE LOGO -->
+<img src="foto.jpg" class="logo-img">
 
-<div class="logo">ZERIX REPS</div>
+<div class="title">ZERIX REPS</div>
+<div class="subtitle">Sneakers • Reps • Community</div>
 
-<div class="desc">
-Sneakers • Reps • Community
-</div>
-
+<!-- PRZYCISKI -->
 <a class="btn" href="https://www.usfans.com/register?ref=BS2QSG" target="_blank">
 🔥 Rejestracja USFANS
 </a>
@@ -93,8 +143,15 @@ Sneakers • Reps • Community
 📦 Spreadsheet
 </a>
 
+<!-- KARTY INFORMACYJNE -->
+<div class="cards">
+<div class="card">🔥 Najlepsze repy</div>
+<div class="card">💬 Aktywna społeczność</div>
+<div class="card">📈 Nowe dropy</div>
+</div>
+
 <div class="footer">
-ZERIX REPS ©
+ZERIX REPS © 2026
 </div>
 
 </div>
