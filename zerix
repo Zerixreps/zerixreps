@@ -1,0 +1,101 @@
+index.html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ZERIX REPS</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+text-align:center;
+background:linear-gradient(135deg,#0f0f0f,#1f1f4d,#5d00ff);
+color:white;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:30px;
+}
+
+.profile{
+width:260px;
+border-radius:25px;
+box-shadow:0 0 30px rgba(140,0,255,.5);
+margin-top:30px;
+}
+
+.logo{
+font-size:55px;
+font-weight:bold;
+margin-top:25px;
+text-shadow:0 0 20px #8a2be2;
+}
+
+.desc{
+margin:25px 0;
+font-size:20px;
+}
+
+.btn{
+display:block;
+margin:20px auto;
+padding:18px;
+width:85%;
+max-width:500px;
+background:linear-gradient(90deg,#7b2cff,#00c6ff);
+color:white;
+text-decoration:none;
+font-size:22px;
+font-weight:bold;
+border-radius:18px;
+box-shadow:0 0 18px rgba(0,198,255,.4);
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.03);
+}
+
+.footer{
+margin-top:50px;
+opacity:0.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="https://i.imgur.com/0Z8FQ7H.jpeg" class="profile">
+
+<div class="logo">ZERIX REPS</div>
+
+<div class="desc">
+Sneakers • Reps • Community
+</div>
+
+<a class="btn" href="https://www.usfans.com/register?ref=BS2QSG" target="_blank">
+🔥 Rejestracja USFANS
+</a>
+
+<a class="btn" href="https://discord.gg/c5z9m9VKxP" target="_blank">
+💬 Discord
+</a>
+
+<a class="btn" href="https://docs.google.com/spreadsheets/d/1GSb10WPdCQU6u1VtgPHUqVWWBPHa3yGqODf9SpNO9XI/edit?gid=1553707851#gid=1553707851" target="_blank">
+📦 Spreadsheet
+</a>
+
+<div class="footer">
+ZERIX REPS ©
+</div>
+
+</div>
+
+</body>
+</html>
